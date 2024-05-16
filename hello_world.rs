@@ -1,3 +1,3 @@
 fc main() {
-    println!("Hello ddd World!");
+    println!("Hello World!");
 }
