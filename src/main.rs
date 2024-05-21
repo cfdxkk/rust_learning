@@ -1,4 +1,5 @@
 
+#[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32,
@@ -19,6 +20,16 @@ impl Rectangle {
         (self.width >= other_rectangle.width && self.height >= other_rectangle.height)
         || (self.width >= other_rectangle.height && self.height >= other_rectangle.width)
     }
+
+    /**
+     * 关联函数，创建一个正方形
+     */
+    fn square (length: u32) -> Rectangle {
+        Rectangle {
+            height: length,
+            width: length,
+        }
+    }
 }
 
 fn main() {
@@ -37,5 +48,8 @@ fn main() {
 
     let can_hold = rectangle1.can_hold(&rectangle2);
     println!("rectangle1 can hold rectangle2 is {}", can_hold);
+
+    let square1 = Rectangle::square(30);
+    println!("A square {:#?}", square1)
     
 }
